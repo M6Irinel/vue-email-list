@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Axios - Vue</title>
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    
+</head>
+<body>
+    
+    <div id="app" class="container text-center pt-3">
+
+        <h1 class="p-3">10 Emails with <span class="font-weight-bold font-italic">Axios</span> and <span class="font-weight-bold font-italic">Vue</span></h1>
+
+        <ol class="text-left list-group my-4 shadow" v-if="arrayMail.length >= 10">
+            <template v-for="(mail, i) in arrayMail">
+                <li class="list-group-item list-group-item-action" :key="i">
+                    {{mail}}
+                </li>
+            </template>
+        </ol>
+
+        <div class="py-2" v-else>
+            wait a moment...
+        </div>
+
+        <button class="btn btn-primary shadow" @click="go10Mail">Generate again 10 mails</button>
+    </div>
+    
+    
+    <script src="./assets/vue.js"></script>
+
+  </body>
+</html>
